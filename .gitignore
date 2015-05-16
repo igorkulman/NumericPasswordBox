@@ -1,0 +1,7 @@
+/NumericPasswordBox/obj
+/NumericPasswordBox/bin
+/NumericPasswordBox.SampleApp/NumericPasswordBox.SampleApp.Windows/obj
+/NumericPasswordBox.SampleApp/NumericPasswordBox.SampleApp.Windows/bin
+/NumericPasswordBox.SampleApp/NumericPasswordBox.SampleApp.WindowsPhone/obj
+/NumericPasswordBox.SampleApp/NumericPasswordBox.SampleApp.WindowsPhone/bin
+/.vs/NumericPasswordBox/v14/*.suo
