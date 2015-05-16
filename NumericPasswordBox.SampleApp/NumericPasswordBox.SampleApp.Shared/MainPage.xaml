@@ -9,7 +9,9 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <numericPasswordBox:NumericPasswordBox Header="Enter password" />
-    </Grid>
+    <StackPanel>
+        <numericPasswordBox:NumericPasswordBox Header="Enter password" Margin="19" x:Name="PasswordBox" />
+
+        <Button Content="get value" Margin="19,0" Click="Button_Click"  />
+    </StackPanel>
 </Page>
