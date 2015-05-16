@@ -20,8 +20,8 @@ using Windows.UI.Xaml.Navigation;
 namespace NumericPasswordBox
 {
     public sealed partial class NumericPasswordBox : UserControl
-    {       
-        private string _passwordChar = "●";
+    {
+        private readonly string _passwordChar = "●";
 
         public string Password
         {
@@ -48,7 +48,7 @@ namespace NumericPasswordBox
         private void PasswordBox_OnKeyUp(object sender, KeyRoutedEventArgs e)
         {
             Password = GetNewPasscode(Password, e);
-            PasswordBox.Text = Regex.Replace(Password, @".", _passwordChar);
+            PasswordBox.Text = string.IsNullOrEmpty(Password) ? string.Empty : Regex.Replace(Password, @".", _passwordChar);
             PasswordBox.SelectionStart = !string.IsNullOrEmpty(PasswordBox.Text) ? PasswordBox.Text.Length : 0;
         }
 
@@ -58,33 +58,43 @@ namespace NumericPasswordBox
             switch (keyEventArgs.Key)
             {
                 case VirtualKey.Number0:
+                case VirtualKey.NumberPad0:
                     newPasscode = oldPasscode + "0";
                     break;
                 case VirtualKey.Number1:
+                case VirtualKey.NumberPad1:
                     newPasscode = oldPasscode + "1";
                     break;
                 case VirtualKey.Number2:
+                case VirtualKey.NumberPad2:
                     newPasscode = oldPasscode + "2";
                     break;
                 case VirtualKey.Number3:
+                case VirtualKey.NumberPad3:
                     newPasscode = oldPasscode + "3";
                     break;
                 case VirtualKey.Number4:
+                case VirtualKey.NumberPad4:
                     newPasscode = oldPasscode + "4";
                     break;
                 case VirtualKey.Number5:
+                case VirtualKey.NumberPad5:
                     newPasscode = oldPasscode + "5";
                     break;
                 case VirtualKey.Number6:
+                case VirtualKey.NumberPad6:
                     newPasscode = oldPasscode + "6";
                     break;
                 case VirtualKey.Number7:
+                case VirtualKey.NumberPad7:
                     newPasscode = oldPasscode + "7";
                     break;
                 case VirtualKey.Number8:
+                case VirtualKey.NumberPad8:
                     newPasscode = oldPasscode + "8";
                     break;
                 case VirtualKey.Number9:
+                case VirtualKey.NumberPad9:
                     newPasscode = oldPasscode + "9";
                     break;
                 case VirtualKey.Back:
